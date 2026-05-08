@@ -60,7 +60,8 @@ http://localhost/Smart-Expense-Tracker/
 ## 📸 Screenshots
 
 Home Page  
-(Add screenshot here)
+![image alt](https://github.com/DahamiThennakoon/Smart-Expense-Manager/blob/6cd01d9582326abbbb2ab5d00cd443b9cb705ec1/home1.JPG)
+![image alt]()
 
 
 ## 🎯 Learning Outcomes
