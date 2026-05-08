@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+body, .dashboard, .history, table, td, th, .btn-action {
+    font-family: 'Inter', 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
+}
+
+.dashboard {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    width: 100%;
+    max-width: 1100px;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    grid-template-areas: 
+        "header header"
+        "balance balance"
+        "left-side graph"
+        "history history";
+    gap: 25px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+}
+
+.header { grid-area: header; text-align: center; color: #1e293b; }
+.balance-section { grid-area: balance; text-align: center; margin: 5px 0; color: #334155; }
+
+.left-column-container {
+    grid-area: left-side;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.income-expense {
+    display: flex;
+    gap: 15px;
+}
+
+#income, #expense {
+    padding: 15px;
+    border-radius: 12px;
+    color: white;
+    font-weight: 600;
+    flex: 1;
+    text-align: center;
+}
+
+#income { background: linear-gradient(135deg, #4ade80, #22c55e); }
+#expense { background: linear-gradient(135deg, #f87171, #ef4444); }
+
+.transaction, .graph, .history {
+    background: rgba(255, 255, 255, 0.4);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.graph {
+    grid-area: graph;
+    height: 433px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#expensePieChart {
+    height: 100% ; 
+    width: 100% ;
+}
+
+.history {
+    grid-area: history;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    outline: none;
+}
+
+#submit-button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #4477ff 0%, #2255cc 100%) !important;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+#submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(34, 85, 204, 0.3);
+}
+
+.filters {
+    margin: 15px 0;
+    display: flex;
+    gap: 10px;
+}
+
+.filters button {
+    padding: 8px 18px;
+    border-radius: 8px;
+    border: none;
+    background: white;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.btn-action {
+    text-decoration: none;
+    font-size: 20px;
+    margin: 0 8px;
+    display: inline-block;
+    font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', 'Twemoji Mozilla', 'EmojiOne Color', sans-serif !important;
+}
+
+#history-table td{
+    text-align: left !important;
+    vertical-align: middle !important;
+    padding: 12px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+#history-table th {
+    text-align: center !important;
+    vertical-align: middle !important;
+    padding: 12px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+@media (max-width: 850px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+        grid-template-areas: "header" "balance" "left-side" "graph" "history";
+    }
+}
